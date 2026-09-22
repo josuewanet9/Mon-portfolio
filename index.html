@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      @layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+    </style>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script id="tailwind-config">
+      tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface": "#faf8ff",
+        "inverse-surface": "#2f3037",
+        "outline-variant": "#c8c5cb",
+        "secondary-fixed-dim": "#c6c5cf",
+        "tertiary-fixed-dim": "#cbc6bd",
+        "primary-fixed": "#e4e1e6",
+        "on-secondary-fixed": "#1a1b22",
+        "tertiary-fixed": "#e8e2d9",
+        "surface-container-low": "#f4f3fc",
+        "primary-container": "#1b1b1e",
+        "on-surface": "#1a1b22",
+        "inverse-on-surface": "#f1f0f9",
+        "secondary": "#5d5e66",
+        "on-primary-fixed-variant": "#47464a",
+        "surface-bright": "#faf8ff",
+        "on-error": "#ffffff",
+        "tertiary": "#000000",
+        "primary-fixed-dim": "#c8c5ca",
+        "tertiary-container": "#1d1b16",
+        "on-primary-container": "#858387",
+        "primary": "#000000",
+        "on-surface-variant": "#47464b",
+        "on-secondary": "#ffffff",
+        "on-primary": "#ffffff",
+        "on-error-container": "#93000a",
+        "surface-container-highest": "#e2e1eb",
+        "on-primary-fixed": "#1b1b1e",
+        "inverse-primary": "#c8c5ca",
+        "on-tertiary-fixed": "#1d1b16",
+        "surface-dim": "#dad9e3",
+        "on-tertiary-container": "#88837c",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-fixed-variant": "#494640",
+        "secondary-container": "#e3e1ec",
+        "surface-tint": "#5f5e61",
+        "surface-container-high": "#e8e7f1",
+        "on-tertiary": "#ffffff",
+        "surface-variant": "#e2e1eb",
+        "secondary-fixed": "#e3e1ec",
+        "background": "#faf8ff",
+        "on-secondary-container": "#63646c",
+        "surface-container": "#eeedf7",
+        "on-secondary-fixed-variant": "#46464e",
+        "error-container": "#ffdad6",
+        "outline": "#77767b",
+        "error": "#ba1a1a",
+        "on-background": "#1a1b22"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "margin": "1.5rem",
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem",
+        "space-lg": "1.5rem",
+        "gutter": "1.5rem",
+        "space-xl": "2.5rem"
+      },
+      "fontFamily": {
+        "label-sm": ["Inter"],
+        "body-md": ["Inter"],
+        "body-lg": ["Inter"],
+        "headline-xl-mobile": ["Inter"],
+        "headline-2xl": ["Inter"],
+        "headline-xl": ["Inter"],
+        "headline-2xl-mobile": ["Inter"],
+        "headline-lg": ["Inter"],
+        "label-md": ["Inter"],
+        "body-sm": ["Inter"],
+        "code-sm": ["Inter"],
+        "headline-md": ["Inter"]
+      },
+      "fontSize": {
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "headline-2xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-2xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+        "body-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "code-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600"}]
+      }
+    }
+  }
+}
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-body-md text-on-background">
+    <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+      <div class="h-16 max-w-6xl mx-auto px-margin flex items-center justify-between">
+        <div class="flex flex-col justify-center">
+          <a class="font-headline-md text-headline-md tracking-tight text-on-surface leading-none" data-path="accueil" href="#">
+            Josue Wanet
+          </a>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mt-0.5">
+            Développeur Web Junior
+          </span>
+        </div>
+        <nav class="hidden md:flex items-center gap-space-lg" data-active-classes="bg-primary text-on-primary font-label-md">
+          <a aria-current="page" class="uppercase tracking-wider transition-colors py-1 px-2 bg-primary text-on-primary font-label-md" data-path="accueil" href="#">
+            Josue Wanet
+          </a>
+          <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2" data-path="a-propos" href="#">
+            À propos
+          </a>
+          <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2" data-path="projets" href="#">
+            Projets
+          </a>
+          <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1 px-2" data-path="contact" href="#">
+            Contact
+          </a>
+        </nav>
+        <div class="flex items-center gap-space-md">
+          <a class="hidden sm:inline-flex items-center justify-center border border-primary bg-primary text-on-primary hover:bg-zinc-800 font-label-md text-label-md uppercase tracking-wider px-4 py-2 transition-colors" data-path="contact" href="#">
+            Me contacter
+          </a>
+          <a class="inline-flex items-center justify-center border border-outline text-on-surface hover:bg-surface-container-high font-label-md text-label-md uppercase tracking-wider px-3 py-2 transition-colors" href="#">
+            CV
+          </a>
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-[18px]">
+              person
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-background">
+      <div class="max-w-6xl mx-auto px-margin min-h-[calc(100vh-16rem)]">
+        <div class="flex flex-col w-full">
+          <div class="py-space-xl flex flex-col gap-16 md:gap-24">
+            <!-- 1. HERO / PRÉSENTATION -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center border border-outline-variant bg-surface-container-lowest p-space-lg md:p-space-xl relative">
+              <div class="absolute top-0 right-0 bg-surface-container-high border-b border-l border-outline-variant px-3 py-1 font-code-sm text-code-sm text-on-surface-variant">
+                SEC_01 // HERO_SCHEMATIC
+              </div>
+              <div class="lg:col-span-7 flex flex-col gap-space-md">
+                <div class="inline-flex items-center gap-2 w-fit bg-surface-container-low border border-outline-variant px-2.5 py-1 text-on-surface-variant font-code-sm text-code-sm">
+                  <span class="inline-block w-2 h-2 bg-primary">
+                  </span>
+                  <span class="">
+                    DEV_JUNIOR // DISPONIBLE
+                  </span>
+                </div>
+                <h1 class="font-headline-2xl text-headline-2xl text-on-surface tracking-tight">
+                  Bonjour, je suis Josue Wanet
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                  Développeur web junior passionné par la création de sites web simples, modernes et accessibles. À la recherche de nouvelles opportunités pour concevoir des expériences web performantes.
+                </p>
+                <div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+                  <a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider px-6 py-3 border border-primary hover:bg-surface-container-highest hover:text-on-surface transition-colors" href="projets.html">
+                    Voir mes projets
+                  </a>
+                  <a class="inline-flex items-center justify-center bg-transparent text-on-surface font-label-md text-label-md uppercase tracking-wider px-6 py-3 border border-outline hover:bg-surface-container-high transition-colors" href="#contact">
+                    Me contacter
+                  </a>
+                </div>
+                <div class="pt-space-md grid grid-cols-3 gap-space-sm border-t border-dashed border-outline-variant text-on-surface-variant font-code-sm text-code-sm">
+                  <div class="">
+                    <span class="block text-outline uppercase font-label-sm text-label-sm">
+                      Expérience
+                    </span>
+                    Projets
+                    &amp;
+                    Autonomie
+                  </div>
+                  <div class="">
+                    <span class="block text-outline uppercase font-label-sm text-label-sm">
+                      Discipline
+                    </span>
+                    Clean Code
+                    &amp;
+                    Accessibilité
+                  </div>
+                  <div class="">
+                    <span class="block text-outline uppercase font-label-sm text-label-sm">
+                      Contrat
+                    </span>
+                    CDI / Stage / Alternance
+                  </div>
+                </div>
+              </div>
+              <!-- Avatar Wireframe Placeholder -->
+              <div class="lg:col-span-5 flex justify-center">
+                <div
+  class="w-full max-w-sm aspect-square relative overflow-hidden border border-outline shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)]"
+>
+  <img
+    src="WhatsApp Image 2026-09-18 at 16.34.17.jpeg"
+    alt="Photo de profil"
+    class="w-full h-full object-cover object-center"
+  />
+</div>
+                </div>
+              </div>
+            </section>
+            <!-- 2. SECTION À PROPOS -->
+            <section class="flex flex-col gap-space-lg" id="a-propos">
+              <div class="flex items-baseline justify-between border-b border-outline pb-space-xs">
+                <div class="flex items-center gap-3">
+                  <span class="font-code-sm text-code-sm border border-outline px-1.5 py-0.5 bg-surface-container-high">
+                    02
+                  </span>
+                  <h2 class="font-headline-xl text-headline-xl text-on-surface">
+                    À propos
+                  </h2>
+                </div>
+                <span class="font-code-sm text-code-sm text-on-surface-variant hidden sm:inline-block">
+                  BIOGRAPHY
+                  &amp;
+                  METRICS
+                </span>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                <div class="lg:col-span-8 flex flex-col gap-space-md">
+                  <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col gap-space-sm">
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+                      Profil général
+                    </span>
+                    <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                      Récemment formé aux technologies du web moderne, je conçois des interfaces réactives et intuitives en appliquant les bonnes pratiques de développement et d'accessibilité. Rigoureux et curieux, je privilégie un code modulaire, structuré et facile à maintenir.
+                    </p>
+                  </div>
+                  <!-- Personal info cards (3 columns) -->
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+                    <div class="bg-surface-container-lowest border border-outline-variant p-space-md flex flex-col">
+                      <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+                        Nom
+                      </span>
+                      <span class="font-headline-md text-headline-md text-on-surface mt-1">
+                        Josue Wanet
+                      </span>
+                      <span class="font-code-sm text-code-sm text-outline mt-2 font-mono">
+                        ID: JW-2025
+                      </span>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant p-space-md flex flex-col">
+                      <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+                        Localisation
+                      </span>
+                      <span class="font-headline-md text-headline-md text-on-surface mt-1">
+                        Kinshasa, République démocratique du Congo
+                      </span>
+                      <span class="font-code-sm text-code-sm text-outline mt-2 font-mono">
+                        DISPO: Télétravail
+                      </span>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant p-space-md flex flex-col">
+                      <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+                        Email
+                      </span>
+                      <span class="font-headline-md text-headline-md text-on-surface mt-1 truncate" title="josue.wanet@example.com">
+                        josuewanet9@gmail.com
+                      </span>
+                      <span class="font-code-sm text-code-sm text-outline mt-2 font-mono">
+                        STATUS: Actif
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Wireframe image placeholder box (Espace de travail) -->
+                <div class="lg:col-span-4 flex flex-col">
+                  <div class="h-full min-h-[220px] border border-outline relative overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,0.8)]">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMEUptgDh2KfDYb9JyERdAurt6Pg7YW1uW-JLU3eaZ75l7tbL2J0K9oTyobKayDO6oHm7Xio9top2aR0laUM0iy7u1clSNIyK682vj-ZltaYb6cw9QAR6eQ_qMOX53cUuGoJO-qyKdUW5lsIbnS_APuvRtf3v89ExXcL_tWtyAgMvCoJQSB4u5UYsrRXnVjoi0HXxqdYfeOyVYHHA5R0ilgRmCrfAMwhiLBfa2y3SUXyAyD9fNxeTYMA" alt="Espace de travail Josue Wanet" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- 3. SECTION COMPÉTENCES -->
+            <section class="flex flex-col gap-space-lg" id="competences">
+              <div class="flex items-baseline justify-between border-b border-outline pb-space-xs">
+                <div class="flex items-center gap-3">
+                  <span class="font-code-sm text-code-sm border border-outline px-1.5 py-0.5 bg-surface-container-high">
+                    03
+                  </span>
+                  <h2 class="font-headline-xl text-headline-xl text-on-surface">
+                    Compétences
+                  </h2>
+                </div>
+                <span class="font-code-sm text-code-sm text-on-surface-variant hidden sm:inline-block">
+                  STACK
+                  &amp;
+                  TOOLING ARCHITECTURE
+                </span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Skill 1 -->
+                <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary transition-colors">
+                  <div class="flex flex-col gap-space-sm">
+                    <div class="flex items-center justify-between">
+                      <div class="w-10 h-10 border border-outline bg-surface-container-low flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">
+                      </div>
+                      <span class="font-code-sm text-code-sm text-outline border border-dashed border-outline-variant px-1.5 py-0.5">
+                        LVL: CORE
+                      </span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mt-2">
+                      1. HTML5
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Structure sémantique, formulaires natifs, balisage SEO et strict respect des critères d'accessibilité (WAI-ARIA).
+                    </p>
+                  </div>
+                  <div class="mt-space-md pt-space-xs border-t border-surface-container-highest flex justify-between font-label-sm text-label-sm text-outline uppercase">
+                    <span class="">
+                      Standard
+                    </span>
+                    <span class="">
+                      W3C Compliant
+                    </span>
+                  </div>
+                </div>
+                <!-- Skill 2 -->
+                <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary transition-colors">
+                  <div class="flex flex-col gap-space-sm">
+                    <div class="flex items-center justify-between">
+                      <div class="w-10 h-10 border border-outline bg-surface-container-low flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">
+                        #css
+                      </div>
+                      <span class="font-code-sm text-code-sm text-outline border border-dashed border-outline-variant px-1.5 py-0.5">
+                        LVL: CORE
+                      </span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mt-2">
+                      2. CSS3
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Flexbox, CSS Grid, variables CSS, architecture modulaire et animations sobres axées sur les performances.
+                    </p>
+                  </div>
+                  <div class="mt-space-md pt-space-xs border-t border-surface-container-highest flex justify-between font-label-sm text-label-sm text-outline uppercase">
+                    <span class="">
+                      Mise en page
+                    </span>
+                    <span class="">
+                      Flex / Grid
+                    </span>
+                  </div>
+                </div>
+                <!-- Skill 3 -->
+                <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary transition-colors">
+                  <div class="flex flex-col gap-space-sm">
+                    <div class="flex items-center justify-between">
+                      <div class="w-10 h-10 border border-outline bg-surface-container-low flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">
+                        JS
+                      </div>
+                      <span class="font-code-sm text-code-sm text-outline border border-dashed border-outline-variant px-1.5 py-0.5">
+                        LVL: CORE
+                      </span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mt-2">
+                      3. JavaScript
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      JavaScript moderne (ES6+), manipulation du DOM, gestion asynchrone (Fetch/Promises) et événements.
+                    </p>
+                  </div>
+                  <div class="mt-space-md pt-space-xs border-t border-surface-container-highest flex justify-between font-label-sm text-label-sm text-outline uppercase">
+                    <span class="">
+                      Runtime
+                    </span>
+                    <span class="">
+                      ES6+ / Web APIs
+                    </span>
+                  </div>
+                </div>
+                <!-- Skill 4 -->
+                <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary transition-colors">
+                  <div class="flex flex-col gap-space-sm">
+                    <div class="flex items-center justify-between">
+                      <div class="w-10 h-10 border border-outline bg-surface-container-low flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">
+                        <span class="material-symbols-outlined text-lg">
+                          devices
+                        </span>
+                      </div>
+                      <span class="font-code-sm text-code-sm text-outline border border-dashed border-outline-variant px-1.5 py-0.5">
+                        LVL: METHOD
+                      </span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mt-2">
+                      4. Responsive Design
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Approche Mobile-first, media queries fluides, adaptabilité multi-résolutions du mobile à l'ultra-large.
+                    </p>
+                  </div>
+                  <div class="mt-space-md pt-space-xs border-t border-surface-container-highest flex justify-between font-label-sm text-label-sm text-outline uppercase">
+                    <span class="">
+                      Workflow
+                    </span>
+                    <span class="">
+                      Mobile-First
+                    </span>
+                  </div>
+                </div>
+                <!-- Skill 5 -->
+                <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary transition-colors">
+                  <div class="flex flex-col gap-space-sm">
+                    <div class="flex items-center justify-between">
+                      <div class="w-10 h-10 border border-outline bg-surface-container-low flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">
+                        <span class="material-symbols-outlined text-lg">
+                          fork_right
+                        </span>
+                      </div>
+                      <span class="font-code-sm text-code-sm text-outline border border-dashed border-outline-variant px-1.5 py-0.5">
+                        LVL: TOOL
+                      </span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mt-2">
+                      5. Git / GitHub
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Gestion de versions rigoureuse, création de branches, pull requests et conventions de commits claires.
+                    </p>
+                  </div>
+                  <div class="mt-space-md pt-space-xs border-t border-surface-container-highest flex justify-between font-label-sm text-label-sm text-outline uppercase">
+                    <span class="">
+                      Versioning
+                    </span>
+                    <span class="">
+                      CLI / GitHub Flow
+                    </span>
+                  </div>
+                </div>
+                <!-- Skill 6 -->
+                <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col justify-between hover:border-primary transition-colors">
+                  <div class="flex flex-col gap-space-sm">
+                    <div class="flex items-center justify-between">
+                      <div class="w-10 h-10 border border-outline bg-surface-container-low flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">
+                        <span class="material-symbols-outlined text-lg">
+                          design_services
+                        </span>
+                      </div>
+                      <span class="font-code-sm text-code-sm text-outline border border-dashed border-outline-variant px-1.5 py-0.5">
+                        LVL: DESIGN
+                      </span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mt-2">
+                      6. UI/UX Design
+                    </h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Wireframing structurel, ergonomie centrée utilisateur, prototypage basique et intégration fidèle via Figma.
+                    </p>
+                  </div>
+                  <div class="mt-space-md pt-space-xs border-t border-surface-container-highest flex justify-between font-label-sm text-label-sm text-outline uppercase">
+                    <span class="">
+                      Outils
+                    </span>
+                    <span class="">
+                      Figma / Wireframes
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- 5. SECTION CONTACT -->
+            <section class="flex flex-col gap-space-lg mb-space-xl" id="contact">
+              <div class="flex items-baseline justify-between border-b border-outline pb-space-xs">
+                <div class="flex items-center gap-3">
+                  <span class="font-code-sm text-code-sm border border-outline px-1.5 py-0.5 bg-surface-container-high">
+                    0
+                  </span>
+                  <h2 class="font-headline-xl text-headline-xl text-on-surface">
+                    Contact
+                  </h2>
+                </div>
+                <span class="font-code-sm text-code-sm text-on-surface-variant hidden sm:inline-block">
+                  TRANSMISSION_PROTOCOL // INQUIRY
+                </span>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                <!-- Info Sidebar -->
+                <div class="lg:col-span-5 flex flex-col gap-space-md">
+                  <div class="bg-surface-container-lowest border border-outline-variant p-space-lg flex flex-col gap-space-sm">
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+                      Communication
+                    </span>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                      Un projet, une opportunité ou simplement envie d'échanger ? N'hésitez pas à m'envoyer un message via le formulaire ci-dessous.
+                    </p>
+                  </div>
+                  <div class="flex flex-col border border-outline-variant bg-surface-container-lowest divide-y divide-outline-variant">
+                    <div class="p-space-md flex flex-col">
+                      <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+                        Email direct
+                      </span>
+                      <a class="font-headline-md text-headline-md text-on-surface hover:underline mt-0.5" href="mailto:josue.wanet@example.com">
+                        josuewanet9@gmail.com
+                      </a>
+                    </div>
+                    <div class="p-space-md flex flex-col">
+                      <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+                        Localisation
+                      </span>
+                      <span class="font-headline-md text-headline-md text-on-surface mt-0.5">
+                        Kinshasa, République démocratique du Congo
+                      </span>
+                    </div>
+                    <div class="p-space-md flex flex-col">
+                      <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">
+                        Disponibilité
+                      </span>
+                      <div class="flex items-center gap-2 mt-1">
+                        <span class="w-2.5 h-2.5 bg-primary">
+                        </span>
+                        <span class="font-body-md text-body-md text-on-surface font-medium">
+                          Immédiate pour entretiens
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border border-dashed border-outline-variant p-space-md bg-surface-container-low font-code-sm text-code-sm text-on-surface-variant flex flex-col gap-1">
+                    <div class="font-semibold text-on-surface">
+                      [SCHEMA: ENCRYPTED_FORM]
+                    </div>
+                    <div class="">
+                      Temps de réponse habituel:
+                      &lt;
+                      24 heures
+                    </div>
+                    <div class="">
+                      Région: Afrique / Kinshas (UTC+0)
+                    </div>
+                  </div>
+                </div>
+                <!-- Contact Form Box -->
+                <div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant p-space-lg md:p-space-xl">
+                  <form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); alert('Message simulé envoyé avec succès !');">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                      <!-- Field 1: Nom -->
+                      <div class="flex flex-col gap-1">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface flex items-center justify-between" for="nom">
+                          <span class="">
+                            Nom
+                            <span class="text-error">
+                              *
+                            </span>
+                          </span>
+                          <span class="font-code-sm text-code-sm text-outline font-normal">
+                            STR_REQUIRED
+                          </span>
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-outline text-on-surface font-body-md text-body-md px-3 py-2.5 rounded-none focus:border-primary focus:outline-none focus:bg-surface-container-lowest transition-colors" id="nom" name="nom" placeholder="Votre nom complet" required="" type="text">
+                      </div>
+                      <!-- Field 2: Email -->
+                      <div class="flex flex-col gap-1">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface flex items-center justify-between" for="email">
+                          <span class="">
+                            Email
+                            <span class="text-error">
+                              *
+                            </span>
+                          </span>
+                          <span class="font-code-sm text-code-sm text-outline font-normal">
+                            EMAIL_PATTERN
+                          </span>
+                        </label>
+                        <input class="w-full bg-surface-container-low border border-outline text-on-surface font-body-md text-body-md px-3 py-2.5 rounded-none focus:border-primary focus:outline-none focus:bg-surface-container-lowest transition-colors" id="email" name="email" placeholder="votre.email@example.com" required="" type="email">
+                      </div>
+                    </div>
+                    <!-- Field 3: Sujet -->
+                    <div class="flex flex-col gap-1">
+                      <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface flex items-center justify-between" for="sujet">
+                        <span class="">
+                          Sujet
+                        </span>
+                        <span class="font-code-sm text-code-sm text-outline font-normal">
+                          SUBJECT_TITLE
+                        </span>
+                      </label>
+                      <input class="w-full bg-surface-container-low border border-outline text-on-surface font-body-md text-body-md px-3 py-2.5 rounded-none focus:border-primary focus:outline-none focus:bg-surface-container-lowest transition-colors" id="sujet" name="sujet" placeholder="Objet de votre message" type="text">
+                    </div>
+                    <!-- Field 4: Message -->
+                    <div class="flex flex-col gap-1">
+                      <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface flex items-center justify-between" for="message">
+                        <span class="">
+                          Message
+                          <span class="text-error">
+                            *
+                          </span>
+                        </span>
+                        <span class="font-code-sm text-code-sm text-outline font-normal">
+                          TXT_BLOCK
+                        </span>
+                      </label>
+                      <textarea class="w-full bg-surface-container-low border border-outline text-on-surface font-body-md text-body-md p-3 rounded-none focus:border-primary focus:outline-none focus:bg-surface-container-lowest transition-colors resize-y" id="message" name="message" placeholder="Écrivez votre message ici..." required="" rows="5">
+                      </textarea>
+                    </div>
+                    <!-- Form Consent / Notice -->
+                    <div class="flex items-start gap-2 pt-space-xs">
+                      <input class="mt-1 rounded-none border-outline checked:bg-primary accent-primary w-4 h-4" id="consent" required="" type="checkbox">
+                      <label class="font-body-sm text-body-sm text-on-surface-variant" for="consent">
+                        J'accepte que les données saisies soient transmises pour me recontacter dans le cadre de ma demande.
+                      </label>
+                    </div>
+                    <!-- CTA Button -->
+                    <div class="pt-space-sm flex items-center justify-between">
+                      <button class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider px-8 py-3.5 border border-primary hover:bg-surface-container-highest hover:text-on-surface transition-colors shadow-[3px_3px_0px_0px_rgba(0,0,0,0.8)] active:translate-x-0.5 active:translate-y-0.5" type="submit">
+                        <span class="">
+                          Envoyer
+                        </span>
+                        <span class="material-symbols-outlined text-base">
+                          send
+                        </span>
+                      </button>
+                      <span class="font-code-sm text-code-sm text-outline hidden sm:inline-block">
+                        POST // /api/v1/contact
+                      </span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="w-full bg-surface-container-low border-t border-outline-variant py-space-xl">
+      <div class="max-w-6xl mx-auto px-margin">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pb-space-lg border-b border-outline-variant">
+          <div class="md:col-span-6 flex flex-col gap-space-xs">
+            <div class="font-headline-md text-headline-md text-on-surface font-bold">
+              Josue Wanet
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Développeur Web Junior — Conception
+              &amp;
+              Architecture Web épurée.
+            </p>
+            <div class="mt-space-sm inline-block">
+              <span class="font-code-sm text-code-sm border border-dashed border-outline px-space-xs py-0.5 bg-surface-container-lowest text-on-surface-variant">
+                [STATUS: DISPONIBLE / EN RECHERCHE]
+              </span>
+            </div>
+          </div>
+          <div class="md:col-span-3 flex flex-col gap-space-xs">
+            <span class="font-label-sm text-label-sm uppercase text-on-surface tracking-wider font-semibold mb-space-xs">
+              Navigation
+            </span>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="accueil" href="#">
+              Accueil
+            </a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="a-propos" href="#">
+              À propos
+            </a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="projets" href="#">
+              Projets
+            </a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">
+              Contact
+            </a>
+          </div>
+          <div class="md:col-span-3 flex flex-col gap-space-xs">
+            <span class="font-label-sm text-label-sm uppercase text-on-surface tracking-wider font-semibold mb-space-xs">
+              Réseaux
+              &amp;
+              Code
+            </span>
+            <div class="flex flex-col gap-space-xs">
+              <a class="font-code-sm text-code-sm border border-outline-variant bg-surface-container-lowest px-2 py-1 text-on-surface-variant hover:border-primary hover:text-on-surface transition-colors inline-block w-fit" href="#">
+                [GitHub] → /josuewanet
+              </a>
+              <a class="font-code-sm text-code-sm border border-outline-variant bg-surface-container-lowest px-2 py-1 text-on-surface-variant hover:border-primary hover:text-on-surface transition-colors inline-block w-fit" href="#">
+                [LinkedIn] → /in/josuewanet
+              </a>
+              <a class="font-code-sm text-code-sm border border-outline-variant bg-surface-container-lowest px-2 py-1 text-on-surface-variant hover:border-primary hover:text-on-surface transition-colors inline-block w-fit" href="#">
+                [Twitter] → @josuewanet
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+          <p class="">
+            © 2025 Josue Wanet. Tous droits réservés.
+          </p>
+          <p class="font-code-sm text-code-sm text-on-surface-variant">
+            v1.0.0 • WIREFRAME_BUILD
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
